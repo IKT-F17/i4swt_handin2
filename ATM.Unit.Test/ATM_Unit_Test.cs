@@ -4,12 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ATM.App
+namespace ATM.Unit.Test
 {
-    class Program
+    public class ATM_Unit_Test
     {
-        static void Main(string[] args)
-        {
-        }
+
     }
 }
