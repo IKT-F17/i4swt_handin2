@@ -4,9 +4,9 @@ namespace ATM
 {
     public interface ISeparation
     {
-        private DateTime SeparationEventTimestamp { get; }
-        private string PlaneTag1 { get; }
-        private string PlaneTag2 { get; }
+        DateTime SeparationEventTimestamp { get; }
+        string PlaneTag1 { get; }
+        string PlaneTag2 { get; }
 
 
     }
