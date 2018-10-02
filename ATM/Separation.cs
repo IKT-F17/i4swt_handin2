@@ -4,9 +4,10 @@ namespace ATM
 {
     public class Separation 
     {
-        public Separation(ITrack track1, ITrack track3)
+        public Separation(ITrack track1, ITrack track2)
         {
-            
+            var Track1 = track1;
+            var Track2 = track2;
 
         }
         public DateTime SeparationEventTimestampStart
