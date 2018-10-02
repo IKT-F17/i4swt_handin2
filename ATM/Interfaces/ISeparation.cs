@@ -2,12 +2,14 @@
 
 namespace ATM.Interfaces
 {
-    public class ISeparation
+    public interface ISeparation
     {
-        private DateTime separationEventTimestamp { get; }
-        private string planeTag1 { get; }
-        private string planeTag2 { get; }
+        private DateTime SeparationEventTimestamp { get; }
+        private string PlaneTag1 { get; }
+        private string PlaneTag2 { get; }
 
 
     }
+
+    
 }
