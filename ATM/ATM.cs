@@ -1,13 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using ATM.Interfaces;
+using TransponderReceiver;
 
 namespace ATM
 {
     public class ATM
     {
+        private ITrack _track;
+        private List<ITrack> tracks;
+        private ITransponderReceiver _receiver;
+        private ITrackFactory _trackFactory;
 
+        public ATM()
+        {
+
+        }
     }
 }
