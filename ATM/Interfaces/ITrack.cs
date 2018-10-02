@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ATM.Interfaces
+namespace ATM
 {
     public interface ITrack
     {
