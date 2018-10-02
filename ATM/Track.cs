@@ -31,28 +31,12 @@ namespace ATM.Interfaces
             }
         }
 
-        public int XCoord
-        {
-            get => _xcoord;
-            set => throw new NotImplementedException();
-        }
+        public int XCoord { get; set; }
 
-        public int YCoord
-        {
-            get => _ycoord;
-            set => throw new NotImplementedException();
-        }
+        public int YCoord { get; set; }
 
-        public int Altitude
-        {
-            get => _altitude;
-            set => throw new NotImplementedException();
-        }
+        public int Altitude { get; set; }
 
-        public DateTime TimeStamp
-        {
-            get => _timeStamp;
-            set => throw new NotImplementedException();
-        }
+        public DateTime TimeStamp { get; set; }
     }
 }
