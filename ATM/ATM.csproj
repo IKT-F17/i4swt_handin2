@@ -45,10 +45,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AirSpace.cs" />
     <Compile Include="ATM.cs" />
+    <Compile Include="Interfaces\IAirspace.cs" />
+    <Compile Include="Interfaces\ISeparation.cs" />
     <Compile Include="Interfaces\ITrack.cs" />
     <Compile Include="Interfaces\ITrackFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Separation.cs" />
     <Compile Include="Track.cs" />
     <Compile Include="TrackFactory.cs" />
   </ItemGroup>
