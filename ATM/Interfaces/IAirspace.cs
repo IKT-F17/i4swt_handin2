@@ -1,4 +1,4 @@
-﻿namespace ATM.Interfaces
+﻿namespace ATM
 {
     public class IAirspace
     {
