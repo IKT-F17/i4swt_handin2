@@ -7,9 +7,5 @@ namespace ATM
         DateTime SeparationEventTimestamp { get; }
         string PlaneTag1 { get; }
         string PlaneTag2 { get; }
-
-
     }
-
-    
 }
