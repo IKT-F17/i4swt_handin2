@@ -11,29 +11,32 @@ namespace ATM
     {
 
 
-        private string _airSpaceID;
-        private int _upperRightXCoord;
-        private int _upperRightYCoord;
-        private int _lowerLeftXCoord;
-        private int _lowerLeftYCoord;
-        private int _upperAltitude;
-        private int _lowerAltitude;
-        private int _horisontalSafetyDistance;
-        private int _vertivalSafetyDistance;
+        
 
         //  Defines the airspace
         public AirSpace(string airSpaceID, int upperRightXCoord, int upperRightYCoord, int lowerLeftXCoord, int lowerLeftYCoord, int upperAltitude, int lowerAltitude)
         {       //  Sets AirSpace boundarys
-            _airSpaceID = airSpaceID;
-            _upperRightXCoord = upperRightXCoord;
-            _upperRightYCoord = upperRightYCoord;
-            _lowerLeftXCoord = lowerLeftXCoord;
-            _lowerLeftYCoord = lowerLeftYCoord;
-            _upperAltitude = upperAltitude;
-            _lowerAltitude = lowerAltitude;
-            _horisontalSafetyDistance = 5000;
-            _vertivalSafetyDistance = 300;
+            //_airSpaceID = airSpaceID;
+            //_upperRightXCoord = upperRightXCoord;
+            //_upperRightYCoord = upperRightYCoord;
+            //_lowerLeftXCoord = lowerLeftXCoord;
+            //_lowerLeftYCoord = lowerLeftYCoord;
+            //_upperAltitude = upperAltitude;
+            //_lowerAltitude = lowerAltitude;
+            //_horisontalSafetyDistance = 5000;
+            //_vertivalSafetyDistance = 300;
         }
+
+        private string _airSpaceID { get; set; }
+        private int _upperRightXCoord { get; set; }
+        private int _upperRightYCoord { get; set; }
+        private int _lowerLeftXCoord { get; set; }
+        private int _lowerLeftYCoord { get; set; }
+        private int _upperAltitude { get; set; }
+        private int _lowerAltitude { get; set; }
+        private int _horisontalSafetyDistance { get; set; }
+        private int _vertivalSafetyDistance { get; set; } 
+
 
         //  we want a list of airplanes so that we can find those that are within our boundaries.
         public List<ITrack> AirplaneList(List<ITrack> tracks)
@@ -42,7 +45,7 @@ namespace ATM
             List<ITrack> AirplaneInterestsList = tracks;
 
             //  Then we sort those away that are outside our airspace boundaries 
-            AirplaneInterestsList.RemoveAll(track => track.XCoord < _lowerLeftXCoord || track.XCoord > _upperRightYCoord);
+            AirplaneInterestsList.RemoveAll(track => track.XCoord < _lowerLeftXCoord || track.XCoord > _upperRightXCoord);
             AirplaneInterestsList.RemoveAll(track => track.XCoord < _lowerLeftYCoord || track.YCoord > _upperRightYCoord);
             //  As well as airplanes that are below or above the height thresholds. 
             AirplaneInterestsList.RemoveAll(track => track.Altitude < _lowerAltitude || track.Altitude > _upperAltitude);
