@@ -42,10 +42,10 @@ namespace ATM
             List<ITrack> AirplaneInterestsList = tracks;
 
             //  Then we sort those away that are outside our airspace boundaries 
-            AirplaneInterestsList.RemoveAll(tracks => tracks.XCoord < _lowerLeftXCoord || tracks.XCoord > _upperRightYCoord);
-            AirplaneInterestsList.RemoveAll(tracks => tracks.XCoord < _lowerLeftYCoord || tracks.YCoord > _upperRightYCoord);
+            AirplaneInterestsList.RemoveAll(track => track.XCoord < _lowerLeftXCoord || track.XCoord > _upperRightYCoord);
+            AirplaneInterestsList.RemoveAll(track => track.XCoord < _lowerLeftYCoord || track.YCoord > _upperRightYCoord);
             //  As well as airplanes that are below or above the height thresholds. 
-            AirplaneInterestsList.RemoveAll(tracks => tracks.Altitude < _lowerAltitude || tracks.Altitude > _upperAltitude);
+            AirplaneInterestsList.RemoveAll(track => track.Altitude < _lowerAltitude || track.Altitude > _upperAltitude);
 
             return AirplaneInterestsList;
         }
@@ -54,7 +54,10 @@ namespace ATM
 
         public bool IsTrackSafetyZoneClear(ITrack track1, ITrack track2)
         {
+            int horisontalSsafetyZone = (int)(Math.Sqrt (Math.Pow ((track1.XCoord - track2.XCoord), 2)) + Math.Pow ((track1.YCoord - track2.YCoord), 2));
+            int verticalSsafetyZone = (int)(Math.Sqrt(Math.Pow((track1.Altitude - track2.Altitude), 2)));
 
+            return (horisontalSsafetyZone < _horisontalSafetyDistance && verticalSsafetyZone < _vertivalSafetyDistance);
         }
 
 
