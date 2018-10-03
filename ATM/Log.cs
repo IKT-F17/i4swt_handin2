@@ -10,7 +10,7 @@ namespace ATM
         private string _path = "../../ATM_Log" + DateTime.Now.ToString("yyyyMMdd") + ".txt";
         
 
-        Log(string newData)
+        public void LogEvent(string newData)
         {
             _log.WriteLineAsync(newData);
 

@@ -8,6 +8,7 @@ namespace ATM.Interfaces
 {
     public interface ILog
     {
+        void LogEvent(string newData);
         void CreateLog();
     }
 }
