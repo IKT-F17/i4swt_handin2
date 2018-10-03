@@ -49,6 +49,7 @@
     <Compile Include="ATM.cs" />
     <Compile Include="Interfaces\IAirspace.cs" />
     <Compile Include="Interfaces\ILog.cs" />
+    <Compile Include="Interfaces\IObserver.cs" />
     <Compile Include="Interfaces\ISeparation.cs" />
     <Compile Include="Interfaces\ISubject.cs" />
     <Compile Include="Interfaces\ITrack.cs" />

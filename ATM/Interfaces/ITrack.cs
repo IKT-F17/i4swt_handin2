@@ -1,8 +1,9 @@
 ﻿using System;
+using ATM.Interfaces;
 
 namespace ATM
 {
-    public interface ITrack
+    public interface ITrack : IObserver<Track>
     {
         //1 Tag Track tag(text)
         //2 X coordinate Track X coordinate in meters
