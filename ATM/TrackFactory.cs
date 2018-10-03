@@ -1,10 +1,33 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
+using ATM.Interfaces;
 
 namespace ATM
 {
-    public class TrackFactory : ITrackFactory
+    
+    public class TrackFactory : ITrackFactory, ISubject
     {
+        public List<ITrack> _observers;
+
+        void registerObserver(ITrack observers)
+        {
+            _observers.Add(observers);
+        }
+
+        void removeObserver(ITrack observers)
+        {
+            _observers.Remove(observers);
+        }
+
+        void notifyObservers(ITrack observer)
+        {
+            foreach (var o in _observers)
+            {
+                o.Update();
+            }
+        }
+
         public ITrack SpawnTrack(string rawTrackData)
         {
             string[] rawDataSplit = rawTrackData.Split(';');
