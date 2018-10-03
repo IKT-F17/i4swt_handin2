@@ -10,6 +10,7 @@ namespace ATM
         private ITransponderReceiver _receiver;
         //private List<ITrack> _tracks;
         public List<ITrack> Global_TrackData;
+        public List<ITrack> Flight_TrackData;
         //private IAirSpace _airSpace;
         //private List<ISeperation> _seperations;
         //private ILog _log;
