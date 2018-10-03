@@ -10,14 +10,21 @@ namespace ATM
     {
         public List<ITrack> _observers;
 
-        void registerObserver(ITrack observers)
+        void registerObserver(ITrack observer)
         {
-            _observers.Add(observers);
+            _observers.Add(observer);
         }
 
-        void removeObserver(ITrack observers)
+        void removeObserver(ITrack observer)
         {
-            _observers.Remove(observers);
+            int i = _observers.IndexOf(observer);
+            if (i >= 0)
+            {
+                _observers.Remove(observer);
+            }
+
+            //Freds
+            // _observers.Remove(observers);
         }
 
         void notifyObservers(ITrack observer)
