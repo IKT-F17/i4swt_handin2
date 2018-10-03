@@ -8,11 +8,11 @@ namespace ATM.App
     {
         static void Main(string[] args)
         {
-            ITransponderReceiver receiver = TransponderReceiverFactory.CreateTransponderDataReceiver();
+            var receiver = TransponderReceiverFactory.CreateTransponderDataReceiver();
+            var tracks = new List<ITrack>();
             ITrackFactory trackFactory = new TrackFactory();
-            List<ITrack> tracks = new List<ITrack>();
 
-            ATM controller = new ATM(receiver, trackFactory, tracks);
+            var controller = new ATM(receiver, trackFactory, tracks);
 
             Console.ReadKey();
         }

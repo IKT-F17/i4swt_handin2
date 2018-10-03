@@ -8,7 +8,8 @@ namespace ATM
         private ITrack _track;
         private ITrackFactory _trackFactory;
         private ITransponderReceiver _receiver;
-        private List<ITrack> _tracks;
+        //private List<ITrack> _tracks;
+        public List<ITrack> Global_TrackData;
         //private IAirSpace _airSpace;
         //private List<ISeperation> _seperations;
         //private ILog _log;
@@ -17,7 +18,7 @@ namespace ATM
         {
             _receiver = receiver;
             _trackFactory = trackFactory;
-            _tracks = tracks;
+            Global_TrackData = tracks;
 
             _receiver.TransponderDataReady += OnTrackData;
         }
@@ -30,7 +31,7 @@ namespace ATM
             {
                 _track = _trackFactory.SpawnTrack(item);
 
-                _tracks.Add(_track);
+                Global_TrackData.Add(_track);
             }
         }
     }

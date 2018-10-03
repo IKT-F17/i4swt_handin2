@@ -4,7 +4,7 @@ using System.Globalization;
 
 namespace ATM
 {
-    public class Log : ILog
+    public class Log /*: ILog*/
     {
         private StreamWriter _log;
         private string _path = "../../ATM_Log" + DateTime.Now.ToString("yyyyMMdd") + ".txt";
