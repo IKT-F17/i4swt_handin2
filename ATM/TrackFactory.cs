@@ -13,7 +13,7 @@ namespace ATM
             int ycoord = Convert.ToInt32(rawDataSplit[2]);
             int altitude = Convert.ToInt32(rawDataSplit[3]);
             DateTime timeStamp =
-            DateTime.ParseExact(rawDataSplit[4], "yyyyMMddHHmmssfff", CultureInfo.InvariantCulture);
+                DateTime.ParseExact(rawDataSplit[4], "yyyyMMddHHmmssfff", CultureInfo.InvariantCulture);
 
             return new Track(tag, xcoord, ycoord, altitude, timeStamp);
         }
