@@ -9,7 +9,7 @@ namespace ATM.Interfaces
 {
     public interface IObserver
     {
-        void Update(IObserver observer);
+        void Update();
 
     }
 }

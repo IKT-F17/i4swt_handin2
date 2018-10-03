@@ -9,8 +9,8 @@ namespace ATM.Interfaces
     public interface ISubject
     {
 
-        void registerObserver();
-        void removeObserver();
-        void notifyObservers();
+        void registerObserver(IObserver observer);
+        void removeObserver(IObserver observer);
+        void notifyObservers(IObserver observer);
     }
 }

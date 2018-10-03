@@ -1,10 +1,13 @@
 ﻿using System;
+using System.Data;
 using ATM.Interfaces;
 
 namespace ATM
 {
-    public interface ITrack : IObserver<Track>
+    public interface ITrack : IObserver, ISubject
     {
+
+        void IObserver.Update()
         //1 Tag Track tag(text)
         //2 X coordinate Track X coordinate in meters
         //3 Y coordinate Track Y coordinate in meters
