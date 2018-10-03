@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ATM.Interfaces;
 using System.IO;
+using System.Globalization;
 
 namespace ATM
 {
@@ -12,10 +13,11 @@ namespace ATM
     {
         private StreamWriter _log;
         private string _path = "../../ATM_Log" + DateTime.Now.ToString("yyyyMMdd") + ".txt";
+        
 
-        Log(ISeparation sep)
+        Log(string newData)
         {
-            
+            _log.WriteLineAsync(newData);
 
             _log.AutoFlush = true;
         }

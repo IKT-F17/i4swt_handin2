@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ATM.Interfaces
 {
-    public interface ILog : ISeparation
+    public interface ILog
     {
         void CreateLog();
     }
