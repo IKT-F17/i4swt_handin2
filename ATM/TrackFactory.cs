@@ -45,13 +45,6 @@ namespace ATM
             DateTime timeStamp =
                 DateTime.ParseExact(rawDataSplit[4], "yyyyMMddHHmmssfff", CultureInfo.InvariantCulture);
 
-            Console.WriteLine("Receiving data from TrackFactory...");
-            Console.WriteLine($"Current Tag: {tag}");
-            Console.WriteLine($"Current X-Coord.: {xcoord}");
-            Console.WriteLine($"Current Y-Coord.: {ycoord}");
-            Console.WriteLine($"Current Altitude: {altitude}");
-            Console.WriteLine($"Current Time Stamp: {timeStamp}");
-
             return new Track(tag, xcoord, ycoord, altitude, timeStamp);
         }
     }
