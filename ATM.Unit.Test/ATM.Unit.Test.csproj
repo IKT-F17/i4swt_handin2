@@ -56,6 +56,16 @@
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ATM.App\ATM.App.csproj">
+      <Project>{9f1853b7-06d7-400a-9d70-a2f510ff2150}</Project>
+      <Name>ATM.App</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ATM\ATM.csproj">
+      <Project>{55489769-6cd6-4afe-8f3b-b315c3736241}</Project>
+      <Name>ATM</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
