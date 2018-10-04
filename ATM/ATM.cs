@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
 using TransponderReceiver;
 
 namespace ATM
@@ -33,6 +35,10 @@ namespace ATM
                 if (!Global_TrackData.ContainsKey(_track.Tag))
                 {
                     Global_TrackData.Add(_track.Tag, _track);
+                }
+                else
+                {
+                    Global_TrackData[_track.Tag].updateTrack(_track);
                 }
             }
         }

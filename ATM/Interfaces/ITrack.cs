@@ -20,5 +20,6 @@ namespace ATM
 
         DateTime TimeStamp { get; set; }
 
+        void updateTrack(ITrack track);
     }
 }

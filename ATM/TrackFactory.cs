@@ -5,36 +5,8 @@ using ATM.Interfaces;
 
 namespace ATM
 {
-    
-    public class TrackFactory : ITrackFactory, ISubject
+    public class TrackFactory : ITrackFactory
     {
-        public List<ITrack> _observers;
-
-        void registerObserver(ITrack observer)
-        {
-            _observers.Add(observer);
-        }
-
-        void removeObserver(ITrack observer)
-        {
-            int i = _observers.IndexOf(observer);
-            if (i >= 0)
-            {
-                _observers.Remove(observer);
-            }
-
-            //Freds
-            // _observers.Remove(observers);
-        }
-
-        void notifyObservers(ITrack observer)
-        {
-            foreach (var o in _observers)
-            {
-                o.Update();
-            }
-        }
-
         public ITrack SpawnTrack(string rawTrackData)
         {
             string[] rawDataSplit = rawTrackData.Split(';');
