@@ -20,12 +20,7 @@ namespace ATM
             return new Track(tag, xcoord, ycoord, altitude, timeStamp);
         }
 
-        public int Add(int x, int y)
-        {
-            return x + y;
-
-
-        }
+        
 
     }
 
