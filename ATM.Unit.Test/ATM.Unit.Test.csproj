@@ -42,7 +42,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ATM_Unit_Test.cs" />
+    <Compile Include="Fakes\FakeTrackFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ATM.App\ATM.App.csproj">
+      <Project>{9f1853b7-06d7-400a-9d70-a2f510ff2150}</Project>
+      <Name>ATM.App</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ATM\ATM.csproj">
+      <Project>{55489769-6cd6-4afe-8f3b-b315c3736241}</Project>
+      <Name>ATM</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
