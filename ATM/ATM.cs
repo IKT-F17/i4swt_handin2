@@ -34,7 +34,16 @@ namespace ATM
                 {
                     Global_TrackData.Add(_track.Tag, _track);
                 }
+                else
+                {
+                    Lastposition[_track.Tag].Up
+                }
             }
         }
+
+        public static Dictionary<string, TrackItem> Lastposition;
+
+
+
     }
 }
