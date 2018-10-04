@@ -9,5 +9,9 @@ namespace ATM
 
         string PlaneTag1 { get; }
         string PlaneTag2 { get; }
+
+        
+        
     }
+    
 }
