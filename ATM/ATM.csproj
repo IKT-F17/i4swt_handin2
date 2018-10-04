@@ -33,6 +33,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -59,6 +60,7 @@
     <Compile Include="Separation.cs" />
     <Compile Include="Track.cs" />
     <Compile Include="TrackFactory.cs" />
+    <Compile Include="TrackItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\TransponderReceiver.dll" />
