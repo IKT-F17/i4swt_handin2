@@ -19,6 +19,9 @@ namespace ATM
             TimeStamp = timeStamp;
         }
 
+        
+
+
         public string Tag
         {
             get => _tag;
