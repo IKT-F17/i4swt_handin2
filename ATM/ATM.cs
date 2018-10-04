@@ -8,17 +8,15 @@ namespace ATM
         private ITrack _track;
         private ITrackFactory _trackFactory;
         private ITransponderReceiver _receiver;
-        //private List<ITrack> _tracks;
-        public List<ITrack> Global_TrackData;
-        public List<ITrack> Flight_TrackData;
+        public Dictionary<string, ITrack> Global_TrackData;
         //private IAirSpace _airSpace;
         //private List<ISeperation> _seperations;
         //private ILog _log;
 
-        public ATM(ITransponderReceiver receiver, ITrackFactory trackFactory, List<ITrack> tracks)
+        public ATM(ITransponderReceiver receiver, ITrackFactory trackFactory, Dictionary<string, ITrack> tracks)
         {
-            _receiver = receiver;
             _trackFactory = trackFactory;
+            _receiver = receiver;
             Global_TrackData = tracks;
 
             _receiver.TransponderDataReady += OnTrackData;
@@ -32,7 +30,10 @@ namespace ATM
             {
                 _track = _trackFactory.SpawnTrack(item);
 
-                Global_TrackData.Add(_track);
+                if (!Global_TrackData.ContainsKey(_track.Tag))
+                {
+                    Global_TrackData.Add(_track.Tag, _track);
+                }
             }
         }
     }
