@@ -42,7 +42,5 @@ namespace ATM.Unit.Test
 
         }
 
-        [Test]
-
     }
 }
