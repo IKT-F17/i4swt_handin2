@@ -19,9 +19,6 @@ namespace ATM
             TimeStamp = timeStamp;
         }
 
-        
-
-
         public string Tag
         {
             get => _tag;
@@ -42,14 +39,27 @@ namespace ATM
 
         public DateTime TimeStamp { get; set; }
 
-
         public void updateTrack(ITrack track)
         {
-            // TODO: Heading/Course (FAILED AT MATH!!!)
-            
+            // TODO: Heading/Course
+            var xDiff = track.XCoord - this.XCoord;
+            var yDiff = track.YCoord - this.YCoord;
+            var heading = CalcHeading(xDiff, yDiff);
+
+            //Console.WriteLine($"Flight: {track.Tag}, have a heading of: {heading} degrees.");
 
             // TODO: Speed/Velocity (m/s)
 
+
+        }
+
+        private static double CalcHeading(double xDiff, double yDiff)
+        {
+            var heading = 90.0d - Math.Atan2(yDiff, xDiff) * 180 / Math.PI;
+
+            if (heading < 0.0d) heading += 360.0;
+
+            return heading;
         }
     }
 }
