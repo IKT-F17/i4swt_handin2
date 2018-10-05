@@ -6,7 +6,6 @@ namespace ATM
     {
         ITrack SpawnTrack(string rawTrackData);
 
-        int Add(int x, int y);
     }
 
     

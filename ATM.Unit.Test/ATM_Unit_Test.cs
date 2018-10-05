@@ -22,11 +22,7 @@ namespace ATM.Unit.Test
             _uut = new TrackFactory();
         }
 
-        [Test]
-        public void addtest()
-        {
-            Assert.That(_uut.Add(2,4), Is.EqualTo(6) );
-        }
+        
 
         [Test]
         public void SpawnTrack_FromRawTestData()
