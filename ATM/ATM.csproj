@@ -52,11 +52,13 @@
     <Compile Include="Interfaces\IObserver.cs" />
     <Compile Include="Interfaces\ISeparation.cs" />
     <Compile Include="Interfaces\ISubject.cs" />
+    <Compile Include="Interfaces\ITelemetrics .cs" />
     <Compile Include="Interfaces\ITrack.cs" />
     <Compile Include="Interfaces\ITrackFactory.cs" />
     <Compile Include="Log.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Separation.cs" />
+    <Compile Include="Telemetrics.cs" />
     <Compile Include="Track.cs" />
     <Compile Include="TrackFactory.cs" />
   </ItemGroup>
