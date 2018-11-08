@@ -49,8 +49,6 @@ namespace ATM
             //Console.WriteLine($"Flight: {track.Tag}, have a heading of: {heading} degrees.");
 
             // TODO: Speed/Velocity (m/s)
-
-
         }
 
         private static double CalcHeading(double xDiff, double yDiff)
