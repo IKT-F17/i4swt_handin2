@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace ATM.Interfaces
 {
-    class ITelemetrics
+    public class ITelemetrics
     {
+            
     }
 }

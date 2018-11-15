@@ -39,16 +39,46 @@ namespace ATM
 
         public DateTime TimeStamp { get; set; }
 
-        public void updateTrack(ITrack track)
+        public void updateTrack(ITrack _track)
         {
-            // TODO: Heading/Course
-            var xDiff = track.XCoord - this.XCoord;
-            var yDiff = track.YCoord - this.YCoord;
-            var heading = CalcHeading(xDiff, yDiff);
 
-            //Console.WriteLine($"Flight: {track.Tag}, have a heading of: {heading} degrees.");
+            var track = _track;
+            track.
+            track.OnNewTrackDataReadyEvent += Track_OnNewTrackDataReadyEvent;
+
+
+            // TODO: Heading/Course
+            //var xDiff = track.XCoord - this.XCoord;
+            //var yDiff = track.YCoord - this.YCoord;
+
 
             // TODO: Speed/Velocity (m/s)
+        }
+
+        public void Track_OnNewTrackDataReadyEvent(object sender, Track e)
+        {
+            XCoord = e.XCoord;
+            YCoord = e.YCoord;
+            Altitude = e.Altitude;
+            TimeStamp = e.TimeStamp;
+            Tag = e.Tag;
+
+
+            var DeltaX = e.XCoord - this.XCoord;
+            var DeltaY = e.YCoord - this.YCoord;
+            var DeltaTime = e.TimeStamp - this.TimeStamp;
+            var DeltaAltitude = e.Altitude - this.Altitude;
+
+            var heading = CalcHeading(DeltaX, DeltaY);
+
+
+            /// Note to self: 
+            /// INFO: Velocity calc: (sqrt(DeltaX^2 + DeltaY^2)) / DeltaTime
+            /// INFO: Heading calc: atan2(DeltaY,DeltaX)*180/PI -> if result < 0 += 306
+
+            Console.WriteLine($"Flight: {Tag}, have a heading of: {heading} degrees.");
+
+
         }
 
         private static double CalcHeading(double xDiff, double yDiff)

@@ -21,5 +21,6 @@ namespace ATM
         DateTime TimeStamp { get; set; }
 
         void updateTrack(ITrack track);
+        void Track_OnNewTrackDataReadyEvent(object sender, Track e);
     }
 }

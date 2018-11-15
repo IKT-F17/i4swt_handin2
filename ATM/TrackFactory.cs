@@ -7,18 +7,32 @@ namespace ATM
 {
     public class TrackFactory : ITrackFactory
     {
+        public event EventHandler<ITrack> OnNewTrackDataReadyEvent;
+
         public ITrack SpawnTrack(string rawTrackData)
         {
             string[] rawDataSplit = rawTrackData.Split(';');
-            string tag = rawDataSplit[0];
-            int xcoord = Convert.ToInt32(rawDataSplit[1]);
-            int ycoord = Convert.ToInt32(rawDataSplit[2]);
-            int altitude = Convert.ToInt32(rawDataSplit[3]);
-            DateTime timeStamp =
+            string Tag = rawDataSplit[0];
+            int XCoord = Convert.ToInt32(rawDataSplit[1]);
+            int YCoord = Convert.ToInt32(rawDataSplit[2]);
+            int Altitude = Convert.ToInt32(rawDataSplit[3]);
+            DateTime TimeStamp =
             DateTime.ParseExact(rawDataSplit[4], "yyyyMMddHHmmssfff", CultureInfo.InvariantCulture);
 
-            return new Track(tag, xcoord, ycoord, altitude, timeStamp);
+            //return new Track(Tag, XCoord, YCoord, Altitude, TimeStamp);
+
+            var track = new Track(Tag, XCoord, YCoord, Altitude, TimeStamp);
+
+            OnNewTrackDataReadyEvent?.Invoke(this, track);
+
+            return null;
         }
+
+
+
+
+
+
     }
 
 
