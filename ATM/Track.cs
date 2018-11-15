@@ -43,7 +43,6 @@ namespace ATM
         {
 
             var track = _track;
-            track.
             track.OnNewTrackDataReadyEvent += Track_OnNewTrackDataReadyEvent;
 
 

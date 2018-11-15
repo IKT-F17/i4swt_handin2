@@ -7,7 +7,35 @@ namespace ATM
 {
     public class TrackFactory : ITrackFactory
     {
+        private string _tag;
+
+        public int XCoord { get; set; }
+        public int YCoord { get; set; }
+        public int Altitude { get; set; }
+        public DateTime TimeStamp { get; set; }
+
         public event EventHandler<ITrack> OnNewTrackDataReadyEvent;
+
+        public void Track(string tag, int xcoord, int ycoord, int altitude, DateTime timeStamp)
+        {
+            Tag = tag;
+            XCoord = xcoord;
+            YCoord = ycoord;
+            Altitude = altitude;
+            TimeStamp = timeStamp;
+        }
+
+        public string Tag
+        {
+            get => _tag;
+            set
+            {
+                if (value.Length != 6)
+                    return;
+
+                _tag = value;
+            }
+        }
 
         public ITrack SpawnTrack(string rawTrackData)
         {
@@ -22,13 +50,15 @@ namespace ATM
             //return new Track(Tag, XCoord, YCoord, Altitude, TimeStamp);
 
             var track = new Track(Tag, XCoord, YCoord, Altitude, TimeStamp);
-
             OnNewTrackDataReadyEvent?.Invoke(this, track);
-
             return null;
         }
 
-
+        void UpdateTrack(ITrack _track)
+        {
+            var track = _track;
+            track.Track_OnNewTrackDataReadyEvent += Track_OnNewTrackDataReadyEvent;
+        }
 
 
 
